@@ -13,7 +13,9 @@ const filter = ref('all')
 
 <template>
     <main class="bg-gray-100 min-h-screen">
+      <div class="bg-gray-200 text-center"><h3 class="font-mono text-3xl">Sardor Xujamurodov</h3></div>
       <header class="flex items-center justify-center gap-1  bg-gray-200">
+      
         <img class="w-[60px]" src="./assets/image.png" alt="#">
         <h1 class=" font-bold text-4xl">Pinia Tasks</h1>
       </header>
