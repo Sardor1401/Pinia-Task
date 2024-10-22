@@ -11,7 +11,7 @@ const handleSubmit=()=>{
     taskStore.addTask({
         title:newTask.value,
         isFav:false,
-        id:Math.floor(Math.random()*10000)
+        id: crypto.randomUUID()
     })
     
    }

@@ -4,7 +4,7 @@ import { computed, ref } from 'vue';
 
 
 export interface Task {
-    id: number;
+    id: string;
     title: string;
     isFav: boolean
 }
@@ -50,11 +50,11 @@ export const useTaskStore = defineStore('taskStore', () => {
 
         if(!res.ok){
             console.log(res.status);
-            
+             
         }
     }
 
-    async function deleteTask(id:number){
+    async function deleteTask(id:string){
         tasks.value = tasks.value.filter(task => task.id !== id)
         const res = await fetch('http://localhost:3000/tasks/'+id,{
             method:'DELETE',
@@ -66,7 +66,7 @@ export const useTaskStore = defineStore('taskStore', () => {
         }
     }
 
-    async function toggleFav(id:number){
+    async function toggleFav(id:string){
         const task = tasks.value.find(t=>t.id === id)
         task.isFav = !task.isFav
 

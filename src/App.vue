@@ -2,13 +2,17 @@
 import TaskDetails from './components/TaskDetails.vue';
 import TaskForm from './components/TaskForm.vue';
 import { useTaskStore } from './store/TaskStore';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 
 const taskStore = useTaskStore()
-taskStore.getTasks()
 const filter = ref('all')
 
+onMounted(() => {
+  taskStore.getTasks()
+  console.log(taskStore.tasks);
+  
+})
 </script>
 
 <template>
